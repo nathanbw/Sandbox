@@ -10,11 +10,6 @@ using std::setw;
 
 int main() {
 	TestClass myTestClass;
-	TestClass* myTCPointer = &myTestClass;
-	myTCPointer->printMessage();
-	myTCPointer = 0;
 	myTestClass.printMessage();
-	//cout << "What?" << endl;
-	//printf("%s", "Alright baby!\n");
 	return 0;
 }
