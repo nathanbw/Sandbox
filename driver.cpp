@@ -11,5 +11,7 @@ using std::setw;
 int main() {
 	TestClass myTestClass;
 	myTestClass.printMessage();
+	int sum = 0;
+	for (int i = 1;  i < 99; (  std::cout << (sum += (i+=2)) << std::endl ) );
 	return 0;
 }
