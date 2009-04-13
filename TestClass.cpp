@@ -1,10 +1,13 @@
 #include "TestClass.h"
 
 TestClass::TestClass() {
-	state = 0;
+	num = 0;
 }
 
-void TestClass::printMessage() {
-	cout << "State is: " << state << endl;
-	state++;
+void TestClass::printValue() {
+	cout << num << endl;
+}
+
+void TestClass::setValue(int newValue) {
+	num = newValue;
 }

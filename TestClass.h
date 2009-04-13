@@ -5,7 +5,8 @@ using std::endl;
 class TestClass {
 	public:
 		TestClass();
-		void printMessage();
+		void printValue();
+		void setValue(int);
 	private:
-		int state;
+		int num;
 };
