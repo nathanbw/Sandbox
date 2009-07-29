@@ -1,11 +1,12 @@
 #include <iostream>
 using std::cout;
 using std::endl;
-#include "Sudoku.cpp"
+#include "Sudoku.h"
 
 int main(int argc, char* argv)
 {
     SudokuGameBoard theGameBoard;
-    theGameBoard.generateNewGame();
+    cout << theGameBoard.isBoardGood() << endl;
+    //theGameBoard.generateNewGame();
     theGameBoard.printBoard();
 }

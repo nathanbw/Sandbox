@@ -1,3 +1,5 @@
+#ifndef SUDOKUGAMEBOARD_H
+#define SUDOKUGAMEBOARD_H
 class SudokuGameBoard
 {
     public:
@@ -15,3 +17,4 @@ class SudokuGameBoard
         bool isInCol(int, int);
         bool isInQuadrant(int, int, int);
 };
+#endif

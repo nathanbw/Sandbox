@@ -7,6 +7,18 @@ using std::endl;
 
 SudokuGameBoard::SudokuGameBoard()
 {
+     int tempBoard[9][9] = {{5, 3, 4, 6, 7, 8, 9, 1, 2},
+        {6, 7, 2, 1, 9, 5, 3, 4, 8},
+        {1, 9, 8, 3, 4, 2, 5, 6, 7},
+        {8, 5, 9, 7, 6, 1, 4, 2, 3},
+        {4, 2, 6, 8, 5, 3, 7, 9, 1},
+        {7, 1, 3, 9, 2, 4, 8, 5, 6},
+        {9, 6, 1, 5, 3, 7, 2, 8, 4},
+        {2, 8, 7, 4, 1, 9, 6, 3, 5},
+        {3, 4, 5, 2, 8, 6, 1, 7, 9}};
+        for(int row = 0; row < 9; row++)
+            for(int col = 0; col < 9; col++)
+                mpBoard[row][col] = tempBoard[row][col];
 }
 
 SudokuGameBoard::~SudokuGameBoard()
@@ -45,12 +57,10 @@ SudokuGameBoard::isBoardGood()
         clearIsPresent();
         for(int col = 0; col < 9; col++)
         {
-            isPresent[mpBoard[row][col]] = (mpBoard[row][col] == 0) ? false : true;
-        }
-        for(int col = 0; col < 9; col++)
-        {
             if(isPresent[mpBoard[row][col]])
                 return false;
+            else
+                isPresent[mpBoard[row][col]] = true;
         }
     }
 
@@ -62,6 +72,8 @@ SudokuGameBoard::isBoardGood()
         {
             if(isPresent[mpBoard[row][col]])
                 return false;
+            else
+                isPresent[mpBoard[row][col]] = true;
         }
     }
 
@@ -75,7 +87,10 @@ SudokuGameBoard::isBoardGood()
             {
                 for (int col = colOffset; col < (rowOffset + 3); col++)
                 {
-                    isPresent[mpBoard[row][col]] = (mpBoard[row][col] == 0) ? false : true;
+                    if(isPresent[mpBoard[row][col]])
+                        return false;
+                    else
+                        isPresent[mpBoard[row][col]] = true;
                 }
             }
         }
