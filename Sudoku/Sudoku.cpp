@@ -35,8 +35,8 @@ SudokuGameBoard::generateNewGame()
     {
         for(int col = 0; col < 9; col++)
         {
-            while(mpBoard[row][col] == 0)
-            //for (int i = 1; i < 10; i++)
+            //while(mpBoard[row][col] == 0)
+            for (int i = 1; i < 1000; i++)
             {
                 //candidate = i;
                 candidate = (rand() % 9) + 1;
@@ -85,7 +85,7 @@ SudokuGameBoard::isBoardGood()
             clearIsPresent();
             for (int row = rowOffset; row < (rowOffset + 3); row++)
             {
-                for (int col = colOffset; col < (rowOffset + 3); col++)
+                for (int col = colOffset; col < (colOffset + 3); col++)
                 {
                     if(isPresent[mpBoard[row][col]])
                         return false;
@@ -201,7 +201,7 @@ SudokuGameBoard::isInQuadrant(int row, int col, int num)
             clearIsPresent();
             for (int row = rowOffset; row < (rowOffset + 3); row++)
             {
-                for (int col = colOffset; col < (rowOffset + 3); col++)
+                for (int col = colOffset; col < (colOffset + 3); col++)
                 {
                     isPresent[mpBoard[row][col]] = (mpBoard[row][col] == 0) ? false : true;
                 }
